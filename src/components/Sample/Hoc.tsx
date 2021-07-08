@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface ComProps {
-  theme: string;
+    theme: string;
 }
 interface Props extends ComProps {
-  url: string;
+    url: string;
 }
 
 /**
@@ -12,23 +12,23 @@ interface Props extends ComProps {
  */
 const hoc = (WrappedComponent: React.ComponentType<ComProps>) => class extends React.Component<Props, { name: string }> {
     state = {
-      name: 'hoc',
+        name: 'hoc',
     }
 
     render() {
-      return (
-        <div>
-          <h2>
-            this is
-            { this.state.name }
-          </h2>
-          <p>
-            url :
-            { this.props.url }
-          </p>
-          <WrappedComponent {...this.props} />
-        </div>
-      );
+        return (
+            <div>
+                <h2>
+                    this is
+                    {this.state.name}
+                </h2>
+                <p>
+                    url :
+                    {this.props.url}
+                </p>
+                <WrappedComponent {...this.props} />
+            </div>
+        );
     }
 };
 
